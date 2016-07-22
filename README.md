@@ -27,11 +27,11 @@ mcontacts.refreshAccessToken opts.refreshToken, (err, accessToken) ->
     return false
   else
     console.log 'mcontact.access token success!'
-    gcontacts.token = accessToken
-    gcontacts.getContacts (err, contacts) ->
+    mcontacts.token = accessToken
+    mcontacts.getContacts (err, contacts) ->
       // Do what you want to do with contacts
       // console.log(contacts);
 
-    gcontacts.getPhoto contact.photoUrl, (err, binaryData) ->
+    mcontacts.getPhoto contact.photoUrl, (err, binaryData) ->
       // Save binaryData to you DB or file.
 ```
