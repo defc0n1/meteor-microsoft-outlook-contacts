@@ -11,6 +11,13 @@ https://techjoomla.com/invitex/how-to-use-hotmailrest-api-to-import-contacts.htm
 
 # Usage
 
+You must request at least the following permissions (scope) when logging in through OAuth
+```javascript
+requestPermissions: ['wl.emails', 'wl.basic', 'wl.contacts_emails'],
+```
+
+And then...
+  
 ```javascript
 opts =
   email: userEmail
