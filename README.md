@@ -20,11 +20,10 @@ And then...
   
 ```javascript
 opts =
-  email: userEmail
-  consumerKey: googleId
-  consumerSecret: googleSecret
-  token: googleAccessToken
-  refreshToken: googleRefreshToken
+  consumerKey: microsoftId
+  consumerSecret: microsoftSecret
+  token: microsoftAccessToken
+  refreshToken: microsoftRefreshToken
 
 mcontacts = new MicrosoftContacts opts
 

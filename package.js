@@ -1,6 +1,6 @@
 Package.describe({
   name: 'rjgb:microsoft-contacts',
-  version: '1.0.0',
+  version: '1.0.2',
   summary: 'Microsoft Contacts package',
   git: 'https://github.com/rjgb/meteor-microsoft-contacts',
   documentation: 'README.md'
