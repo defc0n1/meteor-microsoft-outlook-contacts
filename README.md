@@ -1,4 +1,4 @@
-Meteor Microsoft Contacts
+Meteor Microsoft Outlook Contacts
 
 Based on mrt:google-contacts (can't find repo, search mrt:google-contacts on atmosphere.com)
 
@@ -7,7 +7,7 @@ https://techjoomla.com/invitex/how-to-use-hotmailrest-api-to-import-contacts.htm
 
 # Install
 
-    meteor add rjgb:microsfoft-contacts
+    meteor add rjgb:microsfoft-outlook-contacts
 
 # Usage
 
@@ -25,7 +25,7 @@ opts =
   token: microsoftAccessToken
   refreshToken: microsoftRefreshToken
 
-mcontacts = new MicrosoftContacts opts
+mcontacts = new MicrosoftOutlookContacts opts
 
 mcontacts.refreshAccessToken opts.refreshToken, (err, accessToken) ->
   if err

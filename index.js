@@ -17,7 +17,7 @@ var EventEmitter = Npm.require('events').EventEmitter,
   https = Npm.require('https'),
   querystring = Npm.require('querystring');
 
-MicrosoftContacts = function (opts) {
+MicrosoftOutlookContacts = function (opts) {
   if (typeof opts === 'string') {
     opts = { token: opts };
   }
@@ -32,11 +32,11 @@ MicrosoftContacts = function (opts) {
   this.refreshToken = opts.refreshToken ? opts.refreshToken : null;
 };
 
-MicrosoftContacts.prototype = {};
+MicrosoftOutlookContacts.prototype = {};
 
-util.inherits(MicrosoftContacts, EventEmitter);
+util.inherits(MicrosoftOutlookContacts, EventEmitter);
 
-MicrosoftContacts.prototype._get = function (params, cb) {
+MicrosoftOutlookContacts.prototype._get = function (params, cb) {
   if (typeof params === 'function') {
     cb = params;
     params = {};
@@ -81,7 +81,7 @@ MicrosoftContacts.prototype._get = function (params, cb) {
   }).end();
 };
 
-MicrosoftContacts.prototype._getPhotoData = function (params, cb) {
+MicrosoftOutlookContacts.prototype._getPhotoData = function (params, cb) {
   if (typeof params === 'function') {
     cb = params;
     params = {};
@@ -139,14 +139,14 @@ MicrosoftContacts.prototype._getPhotoData = function (params, cb) {
   }).end();
 };
 
-MicrosoftContacts.prototype.getPhoto = function (path, cb) {
+MicrosoftOutlookContacts.prototype.getPhoto = function (path, cb) {
   this._getPhotoData({path: path}, receivedPhotoData);
   function receivedPhotoData(err, data) {
     cb(err, data);
   }
 };
 
-MicrosoftContacts.prototype.getContacts = function (cb, contacts) {
+MicrosoftOutlookContacts.prototype.getContacts = function (cb, contacts) {
   var self = this;
 
   this._get({ type: 'contacts' }, receivedContacts);
@@ -169,7 +169,7 @@ MicrosoftContacts.prototype.getContacts = function (cb, contacts) {
   }
 };
 
-MicrosoftContacts.prototype._saveContactsFromFeed = function (contacts) {
+MicrosoftOutlookContacts.prototype._saveContactsFromFeed = function (contacts) {
   var self = this;
   //console.log(contacts);
   contacts.forEach(function (entry) {
@@ -189,7 +189,7 @@ MicrosoftContacts.prototype._saveContactsFromFeed = function (contacts) {
   //console.log(self.contacts.length);
 };
 
-MicrosoftContacts.prototype._buildPath = function (params) {
+MicrosoftOutlookContacts.prototype._buildPath = function (params) {
   if (params.path) return params.path;
 
   params = params || {};
@@ -209,7 +209,7 @@ MicrosoftContacts.prototype._buildPath = function (params) {
   return path;
 };
 
-MicrosoftContacts.prototype.refreshAccessToken = function (refreshToken, cb) {
+MicrosoftOutlookContacts.prototype.refreshAccessToken = function (refreshToken, cb) {
   if (typeof params === 'function') {
     cb = params;
     params = {};
